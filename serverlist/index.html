@@ -30,6 +30,13 @@
 
 </head>
 
+<div class="social-icons">
+<a href="https://discord.gg/GVKxbXtbqH" target="_blank"><img src="../img/discord.svg" class="social"></a>
+<a href="https://github.com/luckycdev/Zenith" target="_blank"><img src="../img/github.svg" class="social"></a>
+</div>
+
+<body style="margin-top:5%;">
+<div class="toggleheaderbutton"><button class="downloadbutton" onclick="toggleHeader();">Toggle Header</button></div>
 <div class="header">
   <div class="header-left">
     <a href="../" class="logo-link">
@@ -48,18 +55,12 @@
   </div>
 </div>
 
-<div class="social-icons">
-<a href="https://discord.gg/GVKxbXtbqH" target="_blank"><img src="../img/discord.svg" class="social"></a>
-<a href="https://github.com/luckycdev/Zenith" target="_blank"><img src="../img/github.svg" class="social"></a>
-</div>
-
-<body style="margin-top:5%;">
 <h1 style="margin-left:5%"><u>Server List</u></h1>
 <div style="text-align: center; margin:auto; display:inline; width:35%;">
 
 <div id="servers" style="white-space: pre;">Loading...</div>
 <script>getServerList();</script>
 <div class="download-buttons">
-  <button onclick="getServerList()" class="downloadbutton">Reload</button>
+  <button onclick="getServerList()" style="z-index: 10000;" class="downloadbutton">Reload</button>
 </div>
     </body>

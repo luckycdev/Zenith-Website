@@ -9,16 +9,16 @@
 
 
 <meta charset="UTF-8">
-<meta name="description" content="Plugin Development Instructions for Zenith, a server software for Getting Over It with Bennett Foddy">
+<meta name="description" content="Usage Instructions for Zenith, a server software for Getting Over It with Bennett Foddy">
 <meta name="keywords" content="Getting Over It with Bennett Foddy Multiplayer, Zenith, GOIMP">
 <meta name="author" content="luckycdev">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <meta charset="UTF-8"/>
-<meta property='og:description'  content='Plugin Development Instructions for Zenith, a server software for Getting Over It with Bennett Foddy'>
+<meta property='og:description'  content='Usage Instructions for Zenith, a server software for Getting Over It with Bennett Foddy'>
 <meta name="keywords" content="Getting Over It with Bennett Foddy Multiplayer, Zenith, GOIMP"/>
 <meta name="author" content="luckycdev"/>
-<meta property='og:title'  content='Zenith Plugin Development Instructions'>
+<meta property='og:title'  content='Zenith Usage Instructions'>
 <meta property='og:url'  content='https://zenith.luckyc.dev'>
 <meta property="og:image"  content="../../img/zenith-round.png">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,10 +27,12 @@
 <script src="../../index.js"></script>
 <link href="../../index.css" media="screen" rel="stylesheet" type="text/css"/>
 
-<title>Zenith Plugin Development Instructions</title>
+<title>Zenith Usage Instructions</title>
 <link rel="icon" type="image/png" href="../../img/zenith-round.png"/>
 
 </head>
+
+
 
 <div class="social-icons">
 <a href="https://discord.gg/GVKxbXtbqH" target="_blank"><img src="../../img/discord.svg" class="social"></a>
@@ -61,20 +63,26 @@
   <h2 style="margin-top: 5%; margin-left: 3%;"><a href="../" class="backbutton">&lt; Tutorials</a></h2>
 </div>
 <div style="text-align: center; margin:auto; display:inline; width:35%;">
-    <h1 style="margin-top:5%;"><u>Plugin Development Instructions</u></h1>
+    <h1 style="margin-top:5%;"><u>Usage Instructions</u></h1>
 <div style="text-align: center;">
+<h3>After you have <a class="links" href="../../download/" target="_blank">downloaded Zenith for your architecture</a>, unzip the zip and open terminal to the folder with the unzipped contents</h3>
+<h3>In terminal, you will need to run the GettingOverItMP.Server file with flags.</h3>
+<p><u>Flags:</u></p>
+  <li>⚠️REQUIRED: <strong>--hostname</strong> = server name that will show up in server list</li>
+  <li>⚠️REQUIRED: <strong>--maxplayers</strong> = max players (has to be atleast 1)</li>
+  <li>OPTIONAL: <strong>--private</strong> = will hide from server list</li>
+  <li>OPTIONAL: <strong>--port</strong> = port server is ran on, if not specified it is 25050</li>
+  <li>OPTIONAL: <strong>--nosteam</strong> = will allow pirated clients to join (might break custom pot skins) (will ban/mod by IP and not by steam account)</li>
+  <h3>⚠️Note: --port must be over 1000</h3>
+  <h3>⚠️Note: running without --nosteam may not work</h3>
 
-  <ol style="display: inline-block; text-align: left;">
-    <li>Install <a class="links" href="https://builds.dotnet.microsoft.com/dotnet/Sdk/5.0.408/dotnet-sdk-5.0.408-win-x86.exe" target="_blank">dotnet 5.0.408</a></li>
-    <li>You need to have the <a class="links" href="https://github.com/luckycdev/Zenith" target="_blank">server</a> built (see  <a class="links" href="../build/" target="_blank">Build Instructions</a> for instructions, or just download the  <a class="links" href="https://github.com/luckycdev/Zenith/releases" target="_blank">build release</a>)</li>
-    <li>In a folder, run <code>dotnet new classlib -n PluginName</code> (change PluginName to your plugins name)</li>
-    <li>Open the csproj in  <a class="links" href="https://download.visualstudio.microsoft.com/download/pr/e84651e1-d13a-4bd2-a658-f47a1011ffd1/e17f0d85d70dc9f1e437a78a90dcfc527befe3dc11644e02435bdfe8fd51da27/vs_Community.exe" target="_blank">Visual Studio 2019</a></li>
-    <li>Right click on Dependencies and click Add Project Reference, then at the bottom right click browse, then select ServerShared.dll from the build from step 2*</li>
-    <li>Code your plugin (look at the source from <a class="links" href="https://github.com/luckycdev/Zenith-Plugins" target="_blank">other plugins</a> for reference)</li>
-    <li>Click Build at the top and click Build Solution</li>
-    <li>Simply add your plugins .dll file from your plugin's bin/Debug/net5.0/ into the servers plugins/ folder!</li>
-  </ol>
-    <p>*While developing some plugins, you may need to add more dependencies. For the Broadcast plugin, I had to add Lidgren.Network.dll and UnityEngine.CoreModule.dll along with ServerShared.dll</p>
+  <h3>On Linux, you will need to run <code>chmod +x GettingOverItMP.Server</code> before you can run it with <code>./GettingOverItMP.Server</code></h3>
+  <hr style="margin-left: 30%; margin-right: 30%; height:5px; background-color: white; border-radius: 10px;">
+  <h2>Examples:</h2>
+  <h3>Windows: <code>GettingOverItMP.Server.exe --hostname "my server" --maxplayers 15 --nosteam</code></h3>
+  <h3>Linux: <code>./GettingOverItMP.Server --hostname "my server" --maxplayers 15 --nosteam</code></h3>
+</ul>
+
 </div>
 
     

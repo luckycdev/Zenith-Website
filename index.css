@@ -93,12 +93,20 @@ body {
 .header-left {
     display: flex;
     align-items: center;
+    margin-bottom: 10px;
 }
 
 .header-right {
     display: flex;
     align-items: center;
     gap: 15px;
+}
+
+.toggleheaderbutton {
+    display: none;
+    right: 20px;
+    position: fixed;
+    z-index: 10000;
 }
 
 @media screen and (max-width: 500px) {
@@ -117,6 +125,10 @@ body {
     .header a {
         width: 100%;
         box-sizing: border-box;
+    }
+
+    .toggleheaderbutton {
+        display: block;
     }
 }
 
@@ -192,6 +204,7 @@ img.social{
     gap: 20px;
     flex-wrap: wrap;
     margin-top: 20px;
+    z-index: 10000;
 }
 
 .small{
