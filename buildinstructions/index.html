@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/bdb0f81e24.js" crossorigin="anonymous"></script>
+
+
+<meta charset="UTF-8">
+<meta name="description" content="Build Instructions for Zenith, a server software for Getting Over It with Bennett Foddy">
+<meta name="keywords" content="Getting Over It with Bennett Foddy Multiplayer, Zenith, GOIMP">
+<meta name="author" content="luckycdev">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta charset="UTF-8"/>
+<meta property='og:description'  content='Build Instructions for Zenith, a server software for Getting Over It with Bennett Foddy'>
+<meta name="keywords" content="Getting Over It with Bennett Foddy Multiplayer, Zenith, GOIMP"/>
+<meta name="author" content="luckycdev"/>
+<meta property='og:title'  content='Zenith Build Instructions'>
+<meta property='og:url'  content='https://zenith.luckyc.dev'>
+<meta property="og:image"  content="https://i.luckyc.dev/zenith-round.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#37178f">
+
+<script src="../index.js"></script>
+<link href="../index.css" media="screen" rel="stylesheet" type="text/css"/>
+
+<title>Zenith Build Instructions</title>
+<link rel="icon" type="image/png" href="https://i.luckyc.dev/zenith-round.png"/>
+
+</head>
+
+<div class="header">
+  <div class="header-left">
+    <a href="../" class="logo-link">
+      <div class="logo-group">
+        <img src="https://i.luckyc.dev/zenith-round.png" class="logo-img">
+        <span class="header-title">Zenith</span>
+      </div>
+    </a>
+  </div>
+  <div class="header-right">
+    <a href="../">Home</a>
+    <a href="../download/">Download</a>
+    <a href="../plugins/">Plugins</a>
+    <a class="active" href="">Build Instructions</a>
+  </div>
+</div>
+
+<body>
+
+<div style="text-align: center; margin:auto; display:inline; width:35%;">
+    <h1 style="margin-top:5%;"><u>Build Instructions</u></h1>
+<div style="text-align: center;">
+  <ol style="display: inline-block; text-align: left;">
+    <li>In a folder, do <code>git clone https://github.com/Skippeh/Oxide.GettingOverIt.git</code></li>
+    <li>Copy the GettingOverIt_Data folder from your UNMODDED getting over it files into Oxide.GettingOverIt/src/Dependencies/Patched/ (you will have to create the Dependencies and Patched folder)</li>
+    <li>Install <a class="links" href="https://download.visualstudio.microsoft.com/download/pr/e84651e1-d13a-4bd2-a658-f47a1011ffd1/e17f0d85d70dc9f1e437a78a90dcfc527befe3dc11644e02435bdfe8fd51da27/vs_Community.exe" target="_blank">Visual Studio 2019</a> and <a class="links" href="https://builds.dotnet.microsoft.com/dotnet/Sdk/2.1.202/dotnet-sdk-2.1.202-win-x86.exe" target="_blank">dotnet 2.1.202</a></li>
+    <li>Open Oxide.GettingOverIt.sln in Visual Studio 2019 and go to the top and press build and then build solution, it should say 0 failed</li>
+    <li>In the same folder you cloned Oxide.GettingOverIt into, do <code>git clone https://github.com/luckycdev/Zenith.git</code></li>
+    <li>Inside of the Zenith folder, do <code>git clone https://github.com/Skippeh/lidgren-network-gen3.git</code></li>
+    <li>Install <a class="links" href="https://builds.dotnet.microsoft.com/dotnet/Sdk/5.0.408/dotnet-sdk-5.0.408-win-x86.exe" target="_blank">dotnet 5.0.408</a></li>
+    <li>Open Zenith/Oxide.GettingOverItMP.sln in Visual Studio 2019 and go to the top and press build and then build solution, it should say 0 failed</li>
+  </ol>
+
+  <p>You have built Zenith! The server files will be located at Zenith/GettingOverItMP.Server/bin/Debug/net5.0/</p>
+
+  <p>
+    If you would like to build for linux or other architectures, run Zenith/build-(arch).bat
+    <br>
+    (example: I would run Zenith/build-zenith-linux-arm64.bat and the resulting files will be in
+    <br>
+    Zenith/GettingOverItMP.Server/bin/Debug/net5.0/linux-arm64/publish - to run it I would do
+    <br>
+    <code>chmod +x GettingOverItMP.Server</code> and then <code>./GettingOverItMP.Server --hostname "name" --maxplayers 10 --nosteam</code>
+  </p>
+
+  <pre style="display: inline-block; text-align: left; background-color: #2d2d2d; color: white; padding: 10px; border-radius: 8px;">
+Folder Structure if you're confused on where to clone to:
+A_Random_Folder/
+├─ Oxide.GettingOverIt/
+├─ Zenith/
+│  ├─ lidgren-network-gen3/
+  </pre>
+</div>
+
+    
+</body>

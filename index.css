@@ -1,0 +1,188 @@
+body {
+    font-family: 'Rubik', sans-serif;
+    background-color: #1e2124;
+    color: white;
+}
+
+.links{
+    transition: 0.4s;
+    color: #6dabee;
+}
+
+.links:hover{
+    transition: 0.4s;
+    color: #0f76e4;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+
+.header a {
+    transition: 0.4s;
+    float: left;
+    color: white;
+    background-color: #1e2124;
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px; 
+    line-height: 25px;
+    border-radius: 15px;
+}
+
+.header a:hover {
+    transition: 0.4s;
+    background-color: #3a3e42;
+}
+
+.header a.active {
+    transition: 0.4s;
+    background-color: dodgerblue;
+    color: white;
+}
+
+.header a.active:hover {
+    transition: 0.4s;
+    background-color: rgb(7, 83, 158);
+}
+
+.header-title {
+    font-size: 24px;
+    margin-left: 10px;
+    float: left;
+}
+
+.logo-link {
+  text-decoration: none;
+}
+
+.logo-group {
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  width: 40px;
+  height: 40px;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+@media screen and (max-width: 500px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .header-right {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        width: 40%;
+    }
+
+    .header a {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+div.discord{
+    position:fixed;
+    right:10px;
+    bottom:10px;
+}
+
+div.github{
+    position:fixed;
+    right:50px;
+    bottom:10px;
+}
+
+.plugincontainer {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(26, 27, 29);
+    border-radius: 15px;
+    outline:solid;
+    outline-color: rgb(0, 0, 0);
+    width: 350px;
+    height: 200px;
+}
+
+.plugincontainer p{
+    text-align: center;
+    margin-bottom: 0.05em;
+    margin-top: 0.05em;
+}
+
+.downloadbutton {
+    position: relative;
+    background-color: #4c29c9;
+    border: none;
+    border-radius: 15px;
+    font-size: 17px;
+    color: #FFFFFF;
+    padding: 10px;
+    width: 100px;
+    text-align: center;
+    transition-duration: 0.4s;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
+}
+.downloadbutton:after {
+    content: "";
+    background: #5230cf;
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -20px !important;
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 0.8s
+}
+.downloadbutton:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
+}
+
+.download-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.small{
+    position: absolute;
+    font-size: 13px;
+    right: 5px;
+    top: 10px;
+    text-align: right;
+    margin: 10px;
+}
