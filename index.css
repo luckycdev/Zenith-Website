@@ -4,14 +4,29 @@ body {
     color: white;
 }
 
-.links{
+.links {
     transition: 0.4s;
     color: #6dabee;
 }
 
-.links:hover{
+.links:hover {
     transition: 0.4s;
     color: #0f76e4;
+}
+
+.backbutton {
+    transition: 0.4s;
+    color: #6dabee;
+    border: 0px;
+    background-color: #282c30;
+    border-radius: 15px;
+    padding:10px 10px;
+}
+
+.backbutton:hover {
+    transition: 0.4s;
+    color: #0f76e4;
+    background-color: #24282c;
 }
 
 .header {
@@ -105,16 +120,17 @@ body {
     }
 }
 
-div.discord{
-    position:fixed;
-    right:10px;
-    bottom:10px;
+.social-icons {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    display: flex;
+    gap: 10px;
+    z-index: 1000;
 }
 
-div.github{
-    position:fixed;
-    right:50px;
-    bottom:10px;
+img.social{
+    height: 30px;
 }
 
 .plugincontainer {

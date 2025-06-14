@@ -20,43 +20,51 @@
 <meta name="author" content="luckycdev"/>
 <meta property='og:title'  content='Zenith Build Instructions'>
 <meta property='og:url'  content='https://zenith.luckyc.dev'>
-<meta property="og:image"  content="https://i.luckyc.dev/zenith-round.png">
+<meta property="og:image"  content="../../img/zenith-round.png">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#37178f">
 
-<script src="../index.js"></script>
-<link href="../index.css" media="screen" rel="stylesheet" type="text/css"/>
+<script src="../../index.js"></script>
+<link href="../../index.css" media="screen" rel="stylesheet" type="text/css"/>
 
 <title>Zenith Build Instructions</title>
-<link rel="icon" type="image/png" href="https://i.luckyc.dev/zenith-round.png"/>
+<link rel="icon" type="image/png" href="../../img/zenith-round.png"/>
 
 </head>
 
 <div class="header">
   <div class="header-left">
-    <a href="../" class="logo-link">
+    <a href="../../" class="logo-link">
       <div class="logo-group">
-        <img src="https://i.luckyc.dev/zenith-round.png" class="logo-img">
+        <img src="../../img/zenith-round.png" class="logo-img">
         <span class="header-title">Zenith</span>
       </div>
     </a>
   </div>
   <div class="header-right">
-    <a href="../">Home</a>
-    <a href="../download/">Download</a>
-    <a href="../plugins/">Plugins</a>
-    <a class="active" href="">Build Instructions</a>
+    <a href="../../">Home</a>
+    <a href="../../download/">Download</a>
+    <a href="../../plugins/">Plugins</a>
+    <a class="active" href="">Tutorials</a>
+    <a href="../../serverlist/">Server List</a>
   </div>
 </div>
 
-<body>
+<div class="social-icons">
+<a href="https://discord.gg/GVKxbXtbqH" target="_blank"><img src="../../img/discord.svg" class="social"></a>
+<a href="https://github.com/luckycdev/Zenith" target="_blank"><img src="../../img/github.png" class="social"></a>
+</div>
 
+<body>
+<div style="text-align: left; margin:auto; display:inline; width:35%;">
+  <h2 style="margin-top: 5%; margin-left: 3%;"><a href="../" class="backbutton">&lt; Tutorials</a></h2>
+</div>
 <div style="text-align: center; margin:auto; display:inline; width:35%;">
     <h1 style="margin-top:5%;"><u>Build Instructions</u></h1>
 <div style="text-align: center;">
   <ol style="display: inline-block; text-align: left;">
     <li>In a folder, do <code>git clone https://github.com/Skippeh/Oxide.GettingOverIt.git</code></li>
-    <li>Copy the GettingOverIt_Data folder from your UNMODDED getting over it files into Oxide.GettingOverIt/src/Dependencies/Patched/ (you will have to create the Dependencies and Patched folder)</li>
+    <li>Copy the GettingOverIt_Data folder from your UNMODDED Getting Over It game files into Oxide.GettingOverIt/src/Dependencies/Patched/ (you will have to create the Dependencies and Patched folder)</li>
     <li>Install <a class="links" href="https://download.visualstudio.microsoft.com/download/pr/e84651e1-d13a-4bd2-a658-f47a1011ffd1/e17f0d85d70dc9f1e437a78a90dcfc527befe3dc11644e02435bdfe8fd51da27/vs_Community.exe" target="_blank">Visual Studio 2019</a> and <a class="links" href="https://builds.dotnet.microsoft.com/dotnet/Sdk/2.1.202/dotnet-sdk-2.1.202-win-x86.exe" target="_blank">dotnet 2.1.202</a></li>
     <li>Open Oxide.GettingOverIt.sln in Visual Studio 2019 and go to the top and press build and then build solution, it should say 0 failed</li>
     <li>In the same folder you cloned Oxide.GettingOverIt into, do <code>git clone https://github.com/luckycdev/Zenith.git</code></li>
@@ -74,16 +82,16 @@
     <br>
     Zenith/GettingOverItMP.Server/bin/Debug/net5.0/linux-arm64/publish - to run it I would do
     <br>
-    <code>chmod +x GettingOverItMP.Server</code> and then <code>./GettingOverItMP.Server --hostname "name" --maxplayers 10 --nosteam</code>
+    <code>chmod +x GettingOverItMP.Server</code> and then <code>./GettingOverItMP.Server --hostname "name" --maxplayers 10 --nosteam</code>)
   </p>
 
+  Folder Structure if you're confused on where to clone to:<br>
   <pre style="display: inline-block; text-align: left; background-color: #2d2d2d; color: white; padding: 10px; border-radius: 8px;">
-Folder Structure if you're confused on where to clone to:
 A_Random_Folder/
 ├─ Oxide.GettingOverIt/
 ├─ Zenith/
 │  ├─ lidgren-network-gen3/
-  </pre>
+</pre>
 </div>
 
     
