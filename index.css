@@ -145,6 +145,13 @@ img.social{
     height: 30px;
 }
 
+.plugingrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    margin-left: 10%;
+    margin-right: 10%
+}
+
 .plugincontainer {
     position: relative;
     display: flex;
