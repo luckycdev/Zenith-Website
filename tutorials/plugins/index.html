@@ -66,13 +66,13 @@
 
   <ol style="display: inline-block; text-align: left;">
     <li>Install <a class="links" href="https://builds.dotnet.microsoft.com/dotnet/Sdk/5.0.408/dotnet-sdk-5.0.408-win-x86.exe" target="_blank">dotnet 5.0.408</a></li>
-    <li>You need to have the <a class="links" href="https://github.com/luckycdev/Zenith" target="_blank">server</a> built (see  <a class="links" href="../build/" target="_blank">Build Instructions</a> for instructions, or just download the  <a class="links" href="https://github.com/luckycdev/Zenith/releases" target="_blank">build release</a>)</li>
+    <li>You need to have the <a class="links" href="https://github.com/luckycdev/Zenith" target="_blank">server</a> built (see  <a class="links" href="../build/" target="_blank">Build Instructions</a> for instructions, or just download the  <a class="links" href="https://zenith.luckyc.dev/download/" target="_blank">raw build</a>)</li>
     <li>In a folder, run <code>dotnet new classlib -n PluginName</code> (change PluginName to your plugins name)</li>
     <li>Open the csproj in  <a class="links" href="https://download.visualstudio.microsoft.com/download/pr/e84651e1-d13a-4bd2-a658-f47a1011ffd1/e17f0d85d70dc9f1e437a78a90dcfc527befe3dc11644e02435bdfe8fd51da27/vs_Community.exe" target="_blank">Visual Studio 2019</a></li>
     <li>Right click on Dependencies and click Add Project Reference, then at the bottom right click browse, then select ServerShared.dll from the build from step 2*</li>
-    <li>Code your plugin (look at the source from <a class="links" href="https://github.com/luckycdev/Zenith-Plugins" target="_blank">other plugins</a> for reference)</li>
+    <li>Code your plugin (look at the sources of <a class="links" href="https://github.com/luckycdev/Zenith-Plugins" target="_blank">other plugins</a> for reference)</li>
     <li>Click Build at the top and click Build Solution</li>
-    <li>Simply add your plugins .dll file from your plugin's bin/Debug/net5.0/ into the servers plugins/ folder!</li>
+    <li>Simply add your plugin's .dll file from your plugin's bin/Debug/net5.0/ into the servers plugins/ folder!</li>
   </ol>
     <p>*While developing some plugins, you may need to add more dependencies. For the Broadcast plugin, I had to add Lidgren.Network.dll and UnityEngine.CoreModule.dll along with ServerShared.dll</p>
 </div>
