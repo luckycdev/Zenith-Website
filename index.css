@@ -148,7 +148,7 @@ img.social{
 .plugingrid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    margin-left: 10%;
+    margin-left: 2%;
     margin-right: 10%
 }
 
@@ -171,6 +171,40 @@ img.social{
     margin-top: 0.05em;
 }
 
+.plugindownloadbutton {
+    position: relative;
+    background-color: #4c29c9;
+    border: none;
+    border-radius: 15px;
+    font-size: 17px;
+    color: #FFFFFF;
+    padding: 10px;
+    width: 100px;
+    text-align: center;
+    transition-duration: 0.4s;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
+}
+.plugindownloadbutton:after {
+    content: "";
+    background: #5230cf;
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -20px !important;
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 0.8s
+}
+.plugindownloadbutton:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
+}
+
 .downloadbutton {
     position: relative;
     background-color: #4c29c9;
@@ -180,6 +214,7 @@ img.social{
     color: #FFFFFF;
     padding: 10px;
     width: 100px;
+    height: 75px;
     text-align: center;
     transition-duration: 0.4s;
     text-decoration: none;

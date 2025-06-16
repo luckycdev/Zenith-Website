@@ -54,7 +54,7 @@
     <a href="../../">Home</a>
     <a href="../../download/">Download</a>
     <a href="../../plugins/">Plugins</a>
-    <a class="active" href="">Tutorials</a>
+    <a class="active" href="../">Tutorials</a>
     <a href="../../serverlist/">Server List</a>
   </div>
 </div>
@@ -63,27 +63,33 @@
   <h2 style="margin-top: 5%; margin-left: 3%;"><a href="../" class="backbutton">&lt; Tutorials</a></h2>
 </div>
 <div style="text-align: center; margin:auto; display:inline; width:35%;">
-    <h1 style="margin-top:5%;"><u>Usage Instructions</u></h1>
+    <h1 style="margin-top:5%;"><u>Server Usage Instructions</u></h1>
 <div style="text-align: center;">
 <h3>After you have <a class="links" href="../../download/" target="_blank">downloaded Zenith for your architecture</a>, unzip the zip and open terminal to the folder with the unzipped contents</h3>
 <h3>In terminal, you will need to run the GettingOverItMP.Server file with flags.</h3>
 <p><u>Flags:</u></p>
+<ul style="display: inline-block; text-align: left;"></ol>
   <li>⚠️REQUIRED: <strong>--hostname</strong> = server name that will show up in server list</li>
   <li>⚠️REQUIRED: <strong>--maxplayers</strong> = max players (has to be atleast 1)</li>
   <li>OPTIONAL: <strong>--private</strong> = will hide from server list</li>
   <li>OPTIONAL: <strong>--port</strong> = port server is ran on, if not specified it is 25050</li>
   <li>OPTIONAL: <strong>--nosteam</strong> = will allow pirated clients to join (might break custom pot skins) (will ban/mod by IP and not by steam account)</li>
+</ul>
   <h3>⚠️Note: --port must be over 1000</h3>
   <h3>⚠️Note: running without --nosteam may not work</h3>
 
   <h3>On Linux, you will need to run <code>chmod +x GettingOverItMP.Server</code> before you can run it with <code>./GettingOverItMP.Server</code></h3>
-  <hr style="margin-left: 30%; margin-right: 30%; height:5px; background-color: white; border-radius: 10px;">
   <h2>Examples:</h2>
   <h3>Windows: <code>GettingOverItMP.Server.exe --hostname "my server" --maxplayers 15 --nosteam</code></h3>
   <h3>Linux: <code>./GettingOverItMP.Server --hostname "my server" --maxplayers 15 --nosteam</code></h3>
-</ul>
+
+<hr style="margin-left: 20%; margin-right: 20%; height:5px; background-color: white; border-radius: 10px;">
+
+<h1><u>Plugins Usage</u></h1>
+<h3>To use plugins, you will need to put them inside of a folder that is inside the plugins/ folder</h3>
+<h3>Example: plugins/TestPlugin/TestPlugin.dll</h3>
+<h3>Some plugins will create a config file that you have to change things inside of</h3>
 
 </div>
-
     
 </body>
