@@ -16,3 +16,11 @@ function toggleHeader(){
     header.style.display = 'none';
   }
 }
+
+function getLatestReleaseTag(){
+  fetch('https://api.github.com/repos/luckycdev/zenith/tags')
+    .then(res => res.json())
+    .then(data => {
+        document.getElementById('latest-tag').textContent = "Current Version: " + data[0].name;
+    });
+}
