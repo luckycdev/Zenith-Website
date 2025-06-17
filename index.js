@@ -24,3 +24,25 @@ function getLatestReleaseTag(){
         document.getElementById('latest-tag').textContent = "Current Version: " + data[0].name;
     });
 }
+
+async function fillPluginVersions() {
+  const containers = document.querySelectorAll('.plugincontainer');
+
+  for (const container of containers) {
+    const url = container.dataset.source;
+    const versionElement = container.querySelector('.version');
+
+    try {
+      const res = await fetch(url);
+      if (!res.ok) throw new Error(res.status);
+      const text = await res.text();
+
+      const match = text.match(/public\s+string\s+Version\s*=>\s*"([^"]+)"/);
+      versionElement.textContent = match ? `v${match[1]}` : '??';
+    } catch (e) {
+      versionElement.textContent = '??';
+    }
+  }
+}
+
+window.addEventListener('DOMContentLoaded', fillPluginVersions);
