@@ -145,6 +145,13 @@ img.social{
     height: 30px;
 }
 
+.clickable-copy {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
 .plugingrid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));

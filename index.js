@@ -3,8 +3,27 @@ function getServerList(){
     fetch("https://corsproxy.io/?https://master.gettingoverit.mp/list")
       .then(res => res.text())
       .then(data => {
-        document.getElementById("servers").textContent = data;
-      });
+            const lines = data.trim().split("\n");
+            const formatted = lines.map(line => {
+                const [ip, port] = line.trim().split(";");
+                const server = `${ip}:${port}`;
+                if (server === "193.122.138.111:12345") {
+                    return `${server} (Official Zenith Demo)`;
+                }
+                return server;
+            });
+            document.getElementById("servers").innerHTML = formatted.join("<br>");
+          })
+        .catch(err => {
+            console.error("Error fetching server list:", err);
+            document.getElementById("servers").textContent = "Error loading servers";
+        });
+}
+
+function copyText(el) {
+    const text = el.textContent.trim();
+    navigator.clipboard.writeText(text)
+        .catch(err => console.error('Copy failed', err));
 }
 
 function toggleHeader(){
