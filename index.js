@@ -40,7 +40,12 @@ function getLatestReleaseTag(){
   fetch('https://api.github.com/repos/luckycdev/zenith/tags')
     .then(res => res.json())
     .then(data => {
-        document.getElementById('latest-tag').textContent = "Current Version: " + data[0].name;
+      const latestTag = data[0].name;
+      document.getElementById('latest-tag').innerHTML = 
+        `Current Version: ${latestTag} <img 
+          alt="latest release downloads badge" 
+          src="https://img.shields.io/github/downloads/luckycdev/zenith/${latestTag}/total?color=%239F7AEA&logo=github" 
+          style="vertical-align: middle; margin-left: 8px;">`;
     });
 }
 
