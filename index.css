@@ -156,7 +156,7 @@ img.social{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     margin-left: 2%;
-    margin-right: 10%
+    margin-right: 10%;
 }
 
 .plugincontainer {
@@ -166,20 +166,23 @@ img.social{
     align-items: center;
     background-color: rgb(26, 27, 29);
     border-radius: 15px;
-    outline:solid;
+    outline: solid;
     outline-color: rgb(0, 0, 0);
     width: 350px;
-    height: 200px;
+    height: 275px;
+    padding-bottom: 70px;
 }
 
-.plugincontainer p{
+.plugincontainer p {
     text-align: center;
-    margin-bottom: 0.05em;
-    margin-top: 0.05em;
+    margin: 0.05em 0;
 }
 
 .plugindownloadbutton {
-    position: relative;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
     background-color: #4c29c9;
     border: none;
     border-radius: 15px;
@@ -193,6 +196,7 @@ img.social{
     overflow: hidden;
     cursor: pointer;
 }
+
 .plugindownloadbutton:after {
     content: "";
     background: #5230cf;
@@ -200,16 +204,25 @@ img.social{
     position: absolute;
     padding-top: 300%;
     padding-left: 350%;
-    margin-left: -20px !important;
+    margin-left: -20px;
     margin-top: -120%;
     opacity: 0;
-    transition: all 0.8s
+    transition: all 0.8s;
 }
+
 .plugindownloadbutton:active:after {
     padding: 0;
     margin: 0;
     opacity: 1;
-    transition: 0s
+    transition: 0s;
+}
+
+.pluginimage {
+    width: 50px;
+    height: 50px;
+    margin-top: 10px;
+    border-radius: 8px;
+    object-fit: cover;
 }
 
 .downloadbutton {
@@ -228,6 +241,7 @@ img.social{
     overflow: hidden;
     cursor: pointer;
 }
+
 .downloadbutton:after {
     content: "";
     background: #5230cf;
@@ -240,6 +254,7 @@ img.social{
     opacity: 0;
     transition: all 0.8s
 }
+
 .downloadbutton:active:after {
     padding: 0;
     margin: 0;
@@ -259,7 +274,7 @@ img.social{
 .small{
     position: absolute;
     font-size: 13px;
-    right: 5px;
+    right: 15px;
     top: 10px;
     text-align: right;
     margin: 10px;
