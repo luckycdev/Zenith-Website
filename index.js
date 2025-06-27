@@ -62,9 +62,9 @@ async function fillPluginVersions() {
       const text = await res.text();
 
       const match = text.match(/public\s+string\s+Version\s*=>\s*"([^"]+)"/);
-      versionElement.textContent = match ? `v${match[1]}` : '??';
+      versionElement.textContent = match ? `v${match[1]}` : 'v??';
     } catch (e) {
-      versionElement.textContent = '??';
+      versionElement.textContent = 'v??';
     }
   }
 }
