@@ -1,29 +1,34 @@
 function getServerList(){
-    document.getElementById("servers").textContent = "Loading...";
-    fetch("https://corsproxy.io/?https://master.gettingoverit.mp/list")
-      .then(res => res.text())
-      .then(data => {
-            const lines = data.trim().split("\n");
-            const formatted = lines.map(line => {
-                const [ip, port] = line.trim().split(";");
-                const server = `${ip}:${port}`;
-                if (server === "193.122.138.111:12345") {
-                    return `${server} (Official Zenith Demo)`;
-                }
-                return server;
-            });
-            document.getElementById("servers").innerHTML = formatted.join("<br>");
-          })
-        .catch(err => {
-            console.error("Error fetching server list:", err);
-            document.getElementById("servers").textContent = "Error loading servers";
-        });
+  document.getElementById("servers").textContent = "Loading...";
+  fetch("https://corsproxy.io/?https://master.gettingoverit.mp/list")
+    .then(res => res.text())
+    .then(data => {
+      const lines = data.trim().split("\n");
+      const formatted = lines.map(line => {
+        const [ip, port] = line.trim().split(";");
+        const server = `${ip}:${port}`;
+        const isZenith = server === "193.122.138.111:12345";
+        const label = isZenith ? " (Official Zenith Demo)" : "";
+
+        return `
+          <p class="clickable-copy" onclick="copyText(this)" data-copy="${server}">
+            <strong><u>${server}</u>${label}</strong>
+            <i class="fa-regular fa-clipboard" style="margin-left: 8px;"></i>
+          </p>
+        `;
+      });
+      document.getElementById("servers").innerHTML = formatted.join("");
+    })
+    .catch(err => {
+      console.error("Error fetching server list:", err);
+      document.getElementById("servers").textContent = "Error loading servers";
+    });
 }
 
 function copyText(el) {
-    const text = el.textContent.trim();
-    navigator.clipboard.writeText(text)
-        .catch(err => console.error('Copy failed', err));
+  const text = el.dataset.copy?.trim() || el.textContent.trim();
+  navigator.clipboard.writeText(text)
+    .catch(err => console.error('Copy failed', err));
 }
 
 function toggleHeader(){
