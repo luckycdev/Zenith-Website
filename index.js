@@ -55,7 +55,7 @@ function getLatestReleaseTag(){
 }
 
 async function fillPluginVersions() {
-  const containers = document.querySelectorAll('.plugincontainer');
+  const containers = document.querySelectorAll('.plugincontainer, .individualplugincontainer');
 
   for (const container of containers) {
     const url = container.dataset.source;

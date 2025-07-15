@@ -181,6 +181,26 @@ img.social{
     margin: 0.05em 0;
 }
 
+.individualplugincontainer {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(26, 27, 29);
+    border-radius: 15px;
+    outline: solid;
+    outline-color: rgb(0, 0, 0);
+    width: 90%;
+    height: 425px;
+    gap: 10px;
+}
+
+.individualplugincontainer p {
+    text-align: center;
+    margin: 0.05em 0;
+    font-size: xx-large;
+}
+
 .plugindownloadbutton {
     position: absolute;
     bottom: 20px;
@@ -224,6 +244,13 @@ img.social{
     width: 50px;
     height: 50px;
     margin-top: 10px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.individualpluginimage {
+    width: 100px;
+    height: 100px;
     border-radius: 8px;
     object-fit: cover;
 }
