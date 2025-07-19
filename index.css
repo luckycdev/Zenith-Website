@@ -154,31 +154,62 @@ img.social{
   margin: 6px 0;
 }
 
-.plugingrid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    margin-left: auto;
-    margin-right: auto;
-}
-
 .plugincontainer {
     position: relative;
     display: flex;
     flex-direction: column;
-    align-items: center;
     background-color: rgb(26, 27, 29);
     border-radius: 15px;
     outline: solid;
     outline-color: rgb(0, 0, 0);
-    width: 350px;
-    height: 275px;
-    padding-bottom: 70px;
-    gap: 10px;
+    width: 75%;
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
 .plugincontainer p {
     text-align: center;
     margin: 0.05em 0;
+}
+
+.plugintext {
+    color: #cccccc;
+}
+
+.plugintext a {
+    transition: 0.4s;
+    color: #cccccc;
+}
+
+.plugintext a:hover {
+    transition: 0.4s;
+    color: #a5a5a5;
+}
+
+.plugincontainerinfo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 10px;
+}
+
+.pluginheader {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.pluginlinks {
+    transition: 0.4s;
+    color: #ffffff;
+    font-size: x-large;
+    text-decoration: none;
+}
+
+.pluginlinks:hover {
+    transition: 0.4s;
+    color: #bebebe;
 }
 
 .individualplugincontainer {
@@ -241,11 +272,11 @@ img.social{
 }
 
 .pluginimage {
-    width: 50px;
-    height: 50px;
-    margin-top: 10px;
+    width: 30%;
+    height: 30%;
+    margin-left: 10px;
     border-radius: 8px;
-    object-fit: cover;
+    margin-top: 20%
 }
 
 .individualpluginimage {
