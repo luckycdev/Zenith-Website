@@ -155,20 +155,21 @@ img.social{
 }
 
 .plugincontainer {
-    position: relative;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    align-items: flex-start;
     background-color: rgb(26, 27, 29);
     border-radius: 15px;
     outline: solid;
     outline-color: rgb(0, 0, 0);
     width: 75%;
-    margin-left: 5%;
-    margin-right: 5%;
+    margin: 20px auto;
+    padding: 15px;
+    gap: 20px;
 }
 
 .plugincontainer p {
-    text-align: center;
+    text-align: left;
     margin: 0.05em 0;
 }
 
@@ -188,9 +189,10 @@ img.social{
 
 .plugincontainerinfo {
     display: flex;
-    align-items: center;
+    flex-direction: row;
+    align-items: flex-start;
     gap: 15px;
-    padding: 10px;
+    flex: 1;
 }
 
 .pluginheader {
@@ -272,11 +274,17 @@ img.social{
 }
 
 .pluginimage {
-    width: 30%;
-    height: 30%;
-    margin-left: 10px;
+    width: 100px;
+    height: 100px;
     border-radius: 8px;
-    margin-top: 20%
+    object-fit: cover;
+}
+
+.pluginheader {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 10px;
 }
 
 .individualpluginimage {
@@ -333,10 +341,10 @@ img.social{
 }
 
 .small{
-    position: absolute;
+    position: flex;
     font-size: 13px;
     right: 15px;
     top: 10px;
     text-align: right;
-    margin: 10px;
+    margin: 0;
 }
