@@ -26,13 +26,13 @@
 <link href="../../index.css" media="screen" rel="stylesheet" type="text/css"/>
 
 <title>ChatAlerts | Zenith Plugins</title>
-<link rel="icon" type="image/png" href="../../img/plugins/ChatAlerts.png"/>
+<link rel="icon" type="image/png" href="../../img/zenith-round.png"/>
 
 </head>
 
 <div class="social-icons">
 <a href="https://discord.gg/GVKxbXtbqH" target="_blank"><img src="../../img/discord.svg" class="social"></a>
-<a href="https://github.com/luckycdev/Zenith" target="_blank"><img src="../../img/github.svg" class="social"></a>
+<a href="https://github.com/luckycdev/Zenith-Plugins" target="_blank"><img src="../../img/github.svg" class="social"></a>
 </div>
 
 <body style="margin-top:5%;">
@@ -55,23 +55,77 @@
   </div>
 </div>
 
+<script>
+window.addEventListener('DOMContentLoaded', () => {
+  doSetupPluginToggle();
+});
+</script>
+
 <div style="text-align: left; margin:auto; display:inline; width:35%;">
   <h2 style="margin-top: 5%; margin-left: 3%;"><a href="../" class="backbutton">&lt; Plugins</a></h2>
 </div>
 
-<!--ChatAlerts-->
-    <div class="individualplugincontainer" style="margin:5%;" data-source="https://raw.githubusercontent.com/luckycdev/Zenith-Plugins/main/ChatAlerts/ChatAlerts.cs">
-      <p class='small'><span class="version">v...</span></p>
-      <img src="../../img/plugins/ChatAlerts.png" class="pluginimage">
-      <p style="font-size: xx-large;">ChatAlerts</p>
-      <p>By <a href="https://github.com/luckycdev" target="_blank" class="links">luckycdev</a></p>
-      <p style="margin-left:10px; margin-right:10px;">Allows Moderators to alert (announce) customizable messages in chat</p>
-      <br>
-      <a href="https://github.com/luckycdev/Zenith-Plugins/raw/refs/heads/main/ChatAlerts/ChatAlerts.dll">
+    <div class="individualplugincontainer" data-source="https://raw.githubusercontent.com/luckycdev/Zenith-Plugins/main/ChatAlerts/ChatAlerts.cs">
+      <a href="ChatAlerts/"><img src="../../img/plugins/ChatAlerts.png" class="pluginimage"></a>
+      <div class="plugincontainerinfo">
+        <div>
+          <div class="pluginheader">
+            <a class="pluginlinks" href="ChatAlerts/"><p>ChatAlerts</p></a>
+            <p class="plugintext">by</p>
+            <a href="https://github.com/luckycdev" class="plugintext" target="_blank">luckycdev</a>
+          </div>
+          <p>Allows Moderators to alert (announce) customizable messages in chat</p>
+        </div>
+      </div>
+      <a href="https://github.com/luckycdev/Zenith-Plugins/raw/refs/heads/main/ChatAlerts/ChatAlerts.dll" class="plugindownloadlink">
         <button class="plugindownloadbutton">Download</button>
       </a>
+      <p class='small version'>v...</p>
     </div>
-<!--ChatAlerts-->
 
-  </div>
+<div class="pluginpagebuttonscontainer">
+  <button class="pluginpagebuttonstogglebutton" id="descriptionbutton">Description</button>
+  <button class="pluginpagebuttonstogglebutton" id="changelogbutton">Changelog</button>
+</div>
+
+<div class="pluginpagecontainer"></div>
+
+<div id="descriptioncontent" style="display:none;">
+  <p>ChatAlerts is a plugin that allows Moderators to alert (announce) customizable messages in chat</p>
+  <p>Type <code>/alert message</code> to alert your message (ex: <code>/alert hello</code>)</p>
+</div>
+
+<div id="changelogcontent" style="display:none;">
+  <ul>
+    <li>v.1.3.1</li>
+    <ul>
+      <li>Fixed update checker link</li>
+    </ul>
+    <li>v1.3</li>
+    <ul>
+      <li>Renamed from BroadcastPlugin to ChatAlerts, changed all logger code to use IPlugin <code>Name</code>, change command and all wording to "alert"</li>
+    </ul>
+    <li>v1.2</li>
+    <ul>
+      <li>Renamed from Broadcast to BroadcastPlugin, added config for customization and an update checker</li>
+    </ul>
+    <li>v1.1</li>
+    <ul>
+      <li>Made it so the command does not create again on reload, added Zenith v0.5 support (IPlugin class update)</li>
+    </ul>
+    <li>v1.0.2</li>
+    <ul>
+      <li>Removed unnecessary code</li>
+    </ul>
+    <li>v1.0.1</li>
+    <ul>
+      <li>Made the command usable from both console and chat</li>
+    </ul>
+    <li>v1.0</li>
+    <ul>
+      <li>Initial release</li>
+    </ul>
+  </ul>
+</div>
+
     </body>

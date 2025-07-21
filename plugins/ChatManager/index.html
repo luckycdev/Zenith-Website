@@ -26,13 +26,13 @@
 <link href="../../index.css" media="screen" rel="stylesheet" type="text/css"/>
 
 <title>ChatManager | Zenith Plugins</title>
-<link rel="icon" type="image/png" href="../../img/plugins/ChatManager.png"/>
+<link rel="icon" type="image/png" href="../../img/zenith-round.png"/>
 
 </head>
 
 <div class="social-icons">
 <a href="https://discord.gg/GVKxbXtbqH" target="_blank"><img src="../../img/discord.svg" class="social"></a>
-<a href="https://github.com/luckycdev/Zenith" target="_blank"><img src="../../img/github.svg" class="social"></a>
+<a href="https://github.com/luckycdev/Zenith-Plugins" target="_blank"><img src="../../img/github.svg" class="social"></a>
 </div>
 
 <body style="margin-top:5%;">
@@ -55,24 +55,68 @@
   </div>
 </div>
 
+<script>
+window.addEventListener('DOMContentLoaded', () => {
+  doSetupPluginToggle();
+});
+</script>
+
 <div style="text-align: left; margin:auto; display:inline; width:35%;">
   <h2 style="margin-top: 5%; margin-left: 3%;"><a href="../" class="backbutton">&lt; Plugins</a></h2>
 </div>
 
-<!--ChatManager-->
-    <div class="individualplugincontainer" style="margin:5%;" data-source="https://raw.githubusercontent.com/luckycdev/Zenith-Plugins/main/ChatManager/ChatManager.cs">
-      <p class='small'><span class="version">v...</span></p>
-      <img src="../../img/plugins/ChatManager.png" class="pluginimage">
-      <p style="font-size: xx-large;">ChatManager</p>
-      <p>By <a href="https://github.com/luckycdev" target="_blank" class="links">luckycdev</a></p>
-      <p style="margin-left:10px; margin-right:10px;">Customizable chat bad words filter, customizable chat rank prefixes, customizable chat rank colors, and customizable join/leave messages</p>
-      <br>
-      <br>
-      <a href="https://github.com/luckycdev/Zenith-Plugins/raw/refs/heads/main/ChatManager/ChatManager.dll">
+    <div class="individualplugincontainer" data-source="https://raw.githubusercontent.com/luckycdev/Zenith-Plugins/main/ChatManager/ChatManager.cs">
+      <a href="ChatManager/"><img src="../../img/plugins/ChatManager.png" class="pluginimage"></a>
+      <div class="plugincontainerinfo">
+        <div>
+          <div class="pluginheader">
+            <a class="pluginlinks" href="ChatManager/"><p>ChatManager</p></a>
+            <p class="plugintext">by</p>
+            <a href="https://github.com/luckycdev" class="plugintext" target="_blank">luckycdev</a>
+          </div>
+          <p>Customizable chat bad words filter, customizable chat rank prefixes, customizable chat rank colors, and customizable join/leave messages</p>
+        </div>
+      </div>
+      <a href="https://github.com/luckycdev/Zenith-Plugins/raw/refs/heads/main/ChatManager/ChatManager.dll" class="plugindownloadlink">
         <button class="plugindownloadbutton">Download</button>
       </a>
+      <p class='small version'>v...</p>
     </div>
-<!--ChatManager-->
 
-  </div>
+<div class="pluginpagebuttonscontainer">
+  <button class="pluginpagebuttonstogglebutton" id="descriptionbutton">Description</button>
+  <button class="pluginpagebuttonstogglebutton" id="changelogbutton">Changelog</button>
+</div>
+
+<div class="pluginpagecontainer"></div>
+
+<div id="descriptioncontent" style="display:none;">
+  <p>ChatManager is a plugin that has a customizable bad words filter, customizable rank prefixes and rank colors for chat, and customizable join and leave messages</p>
+</div>
+
+<div id="changelogcontent" style="display:none;">
+  <ul>
+    <li>v0.3.2</li>
+    <ul>
+      <li>Renamed from ChatPlugin to ChatManager, changed all logger code to use IPlugin <code>Name</code></li>
+    </ul>
+    <li>v0.3.1</li>
+    <ul>
+      <li>Made the modifiable join and leave messages use the rank prefixes</li>
+    </ul>
+    <li>v0.3</li>
+    <ul>
+      <li>Made join and leave messages modifiable</li>
+    </ul>
+    <li>v0.2</li>
+    <ul>
+      <li>Added banned words list</li>
+    </ul>
+    <li>v0.1</li>
+    <ul>
+      <li>Initial release</li>
+      </ul>
+  </ul>
+</div>
+
     </body>

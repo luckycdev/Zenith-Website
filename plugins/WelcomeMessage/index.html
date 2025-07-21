@@ -26,13 +26,13 @@
 <link href="../../index.css" media="screen" rel="stylesheet" type="text/css"/>
 
 <title>WelcomeMessage | Zenith Plugins</title>
-<link rel="icon" type="image/png" href="../../img/plugins/WelcomeMessage.png"/>
+<link rel="icon" type="image/png" href="../../img/zenith-round.png"/>
 
 </head>
 
 <div class="social-icons">
 <a href="https://discord.gg/GVKxbXtbqH" target="_blank"><img src="../../img/discord.svg" class="social"></a>
-<a href="https://github.com/luckycdev/Zenith" target="_blank"><img src="../../img/github.svg" class="social"></a>
+<a href="https://github.com/luckycdev/Zenith-Plugins" target="_blank"><img src="../../img/github.svg" class="social"></a>
 </div>
 
 <body style="margin-top:5%;">
@@ -55,24 +55,69 @@
   </div>
 </div>
 
+<script>
+window.addEventListener('DOMContentLoaded', () => {
+  doSetupPluginToggle();
+});
+</script>
+
 <div style="text-align: left; margin:auto; display:inline; width:35%;">
   <h2 style="margin-top: 5%; margin-left: 3%;"><a href="../" class="backbutton">&lt; Plugins</a></h2>
 </div>
 
-<!--WelcomeMessage-->
-    <div class="individualplugincontainer" style="margin:5%;" data-source="https://raw.githubusercontent.com/luckycdev/Zenith-Plugins/main/WelcomeMessage/WelcomeMessage.cs">
-      <p class='small'><span class="version">v...</span></p>
-      <img src="../../img/plugins/WelcomeMessage.png" class="pluginimage">
-      <p style="font-size: xx-large;">WelcomeMessage</p>
-      <p>By <a href="https://github.com/luckycdev" target="_blank" class="links">luckycdev</a></p>
-      <p style="margin-left:10px; margin-right:10px;">Sends a customizable and toggleable message to the player joining in chat</p>
-      <br>
-      <br>
-      <a href="https://github.com/luckycdev/Zenith-Plugins/raw/refs/heads/main/WelcomeMessage/WelcomeMessage.dll">
+    <div class="individualplugincontainer" data-source="https://raw.githubusercontent.com/luckycdev/Zenith-Plugins/main/WelcomeMessage/WelcomeMessage.cs">
+      <a href="WelcomeMessage/"><img src="../../img/plugins/WelcomeMessage.png" class="pluginimage"></a>
+      <div class="plugincontainerinfo">
+        <div>
+          <div class="pluginheader">
+            <a class="pluginlinks" href="WelcomeMessage/"><p>WelcomeMessage</p></a>
+            <p class="plugintext">by</p>
+            <a href="https://github.com/luckycdev" class="plugintext" target="_blank">luckycdev</a>
+          </div>
+          <p>Sends a customizable and toggleable message to the player joining in chat</p>
+        </div>
+      </div>
+      <a href="https://github.com/luckycdev/Zenith-Plugins/raw/refs/heads/main/WelcomeMessage/WelcomeMessage.dll" class="plugindownloadlink">
         <button class="plugindownloadbutton">Download</button>
       </a>
+      <p class='small version'>v...</p>
     </div>
-<!--WelcomeMessage-->
 
-  </div>
+<div class="pluginpagebuttonscontainer">
+  <button class="pluginpagebuttonstogglebutton" id="descriptionbutton">Description</button>
+  <button class="pluginpagebuttonstogglebutton" id="changelogbutton">Changelog</button>
+</div>
+
+<div class="pluginpagecontainer"></div>
+
+<div id="descriptioncontent" style="display:none;">
+  <p>WelcomeMessage is a plugin that sends a customizable and toggleable message to the player joining in chat</p>
+  <p>The toggle command adds the player's IP to a file</p>
+</div>
+
+<div id="changelogcontent" style="display:none;">
+  <ul>
+    <li>v1.2.1</li>
+    <ul>
+      <li>Changed all logger code to use IPlugin <code>Name</code></li>
+    </ul>
+    <li>v1.2</li>
+    <ul>
+      <li>Made it not warn about having default colors in config, changed command from /togglewelcome to /togglewelcomemessage, load config even if it was just created</li>
+      </ul>
+    <li>v1.1.1</li>
+    <ul>
+      <li>Added update checker</li>
+      </ul>
+    <li>v1.1</li>
+    <ul>
+      <li>Added toggle command</li>
+      </ul>
+    <li>v1.0</li>
+    <ul>
+      <li>Initial release</li>
+      </ul>
+  </ul>
+</div>
+
     </body>

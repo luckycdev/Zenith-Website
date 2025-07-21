@@ -26,13 +26,13 @@
 <link href="../../index.css" media="screen" rel="stylesheet" type="text/css"/>
 
 <title>AntiDuplicatePlayers | Zenith Plugins</title>
-<link rel="icon" type="image/png" href="../../img/plugins/AntiDuplicatePlayers.png"/>
+<link rel="icon" type="image/png" href="../../img/zenith-round.png"/>
 
 </head>
 
 <div class="social-icons">
 <a href="https://discord.gg/GVKxbXtbqH" target="_blank"><img src="../../img/discord.svg" class="social"></a>
-<a href="https://github.com/luckycdev/Zenith" target="_blank"><img src="../../img/github.svg" class="social"></a>
+<a href="https://github.com/luckycdev/Zenith-Plugins" target="_blank"><img src="../../img/github.svg" class="social"></a>
 </div>
 
 <body style="margin-top:5%;">
@@ -55,27 +55,56 @@
   </div>
 </div>
 
+<script>
+window.addEventListener('DOMContentLoaded', () => {
+  doSetupPluginToggle();
+});
+</script>
+
 <div style="text-align: left; margin:auto; display:inline; width:35%;">
   <h2 style="margin-top: 5%; margin-left: 3%;"><a href="../" class="backbutton">&lt; Plugins</a></h2>
 </div>
 
-<div style="display: flex; align-items: center; margin-top:50px; margin-left: 100px;">
-  <img src="../../img/plugins/AntiDuplicatePlayers.png" class="individualpluginimage">
-  <span style="font-size: 30px; margin-left: 10px;">AntiDuplicatePlayers</span>
-</div>
-<p style="margin-left: 100px;">By <a href="https://github.com/luckycdev" target="_blank" class="links">luckycdev</a></p>
-
-      <!--AntiDuplicatePlayers-->
-    <div class="individualplugincontainer" style="margin:5%;" data-source="https://raw.githubusercontent.com/luckycdev/Zenith-Plugins/main/AntiDuplicatePlayers/AntiDuplicatePlayers.cs">
-      <p class='small'><span class="version">v...</span></p>
-      <p style="margin-left:10px; margin-right:10px;">Prevents players from creating duplicates of themselves (example: spamming control r and tab to create duplicates does not work with this plugin)</p>
-      <br>
-      <br>
-      <a href="https://github.com/luckycdev/Zenith-Plugins/raw/refs/heads/main/AntiDuplicatePlayers/AntiDuplicatePlayers.dll">
+    <div class="individualplugincontainer" data-source="https://raw.githubusercontent.com/luckycdev/Zenith-Plugins/main/AntiDuplicatePlayers/AntiDuplicatePlayers.cs">
+      <a href="AntiDuplicatePlayers/"><img src="../../img/plugins/AntiDuplicatePlayers.png" class="pluginimage"></a>
+      <div class="plugincontainerinfo">
+        <div>
+          <div class="pluginheader">
+            <a class="pluginlinks" href="AntiDuplicatePlayers/"><p>AntiDuplicatePlayers</p></a>
+            <p class="plugintext">by</p>
+            <a href="https://github.com/luckycdev" class="plugintext" target="_blank">luckycdev</a>
+          </div>
+          <p>Prevents players from creating duplicates of themselves (example: spamming control r and tab to create duplicates does not work with this plugin)</p>
+        </div>
+      </div>
+      <a href="https://github.com/luckycdev/Zenith-Plugins/raw/refs/heads/main/AntiDuplicatePlayers/AntiDuplicatePlayers.dll" class="plugindownloadlink">
         <button class="plugindownloadbutton">Download</button>
       </a>
+      <p class='small version'>v...</p>
     </div>
-<!--AntiDuplicatePlayers-->
 
-  </div>
+<div class="pluginpagebuttonscontainer">
+  <button class="pluginpagebuttonstogglebutton" id="descriptionbutton">Description</button>
+  <button class="pluginpagebuttonstogglebutton" id="changelogbutton">Changelog</button>
+</div>
+
+<div class="pluginpagecontainer"></div>
+
+<div id="descriptioncontent" style="display:none;">
+  <p>AntiDuplicatePlayers is a plugin that checks joining players' IPs and names, and if they both match a currently online players' IP and name, it kicks the duplicate player</p>
+</div>
+
+<div id="changelogcontent" style="display:none;">
+  <ul>
+    <li>v1.0.1</li>
+    <ul>
+      <li>Changed all logger code to use IPlugin <code>Name</code></li>
+    </ul>
+    <li>v1.0</li>
+    <ul>
+      <li>Initial release</li>
+      </ul>
+  </ul>
+</div>
+
     </body>

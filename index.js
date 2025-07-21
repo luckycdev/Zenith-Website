@@ -75,3 +75,49 @@ async function fillPluginVersions() {
 }
 
 window.addEventListener('DOMContentLoaded', fillPluginVersions);
+
+function setupPluginToggle({
+  descriptionButtonId,
+  changelogButtonId,
+  contentSelector,
+  descriptionContentId,
+  changelogContentId
+}) {
+  const descBtn = document.getElementById(descriptionButtonId);
+  const changelogBtn = document.getElementById(changelogButtonId);
+  const contentDiv = document.querySelector(contentSelector);
+  const descContent = document.getElementById(descriptionContentId);
+  const changelogContent = document.getElementById(changelogContentId);
+
+  if (!descBtn || !changelogBtn || !contentDiv || !descContent || !changelogContent) {
+    console.warn('Plugin toggle elements missing');
+    return;
+  }
+
+  function showDescription() {
+    contentDiv.innerHTML = descContent.innerHTML;
+    descBtn.classList.add('active');
+    changelogBtn.classList.remove('active');
+  }
+
+  function showChangelog() {
+    contentDiv.innerHTML = changelogContent.innerHTML;
+    changelogBtn.classList.add('active');
+    descBtn.classList.remove('active');
+  }
+
+  descBtn.addEventListener('click', showDescription);
+  changelogBtn.addEventListener('click', showChangelog);
+
+  showDescription();
+}
+
+function doSetupPluginToggle() {
+    setupPluginToggle({
+    descriptionButtonId: 'descriptionbutton',
+    changelogButtonId: 'changelogbutton',
+    contentSelector: '.pluginpagecontainer',
+    descriptionContentId: 'descriptioncontent',
+    changelogContentId: 'changelogcontent'
+  });
+}

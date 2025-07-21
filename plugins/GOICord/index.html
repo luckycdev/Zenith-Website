@@ -26,13 +26,13 @@
 <link href="../../index.css" media="screen" rel="stylesheet" type="text/css"/>
 
 <title>GOICord | Zenith Plugins</title>
-<link rel="icon" type="image/png" href="../../img/plugins/GOICord.png"/>
+<link rel="icon" type="image/png" href="../../img/zenith-round.png"/>
 
 </head>
 
 <div class="social-icons">
 <a href="https://discord.gg/GVKxbXtbqH" target="_blank"><img src="../../img/discord.svg" class="social"></a>
-<a href="https://github.com/luckycdev/Zenith" target="_blank"><img src="../../img/github.svg" class="social"></a>
+<a href="https://github.com/luckycdev/Zenith-Plugins" target="_blank"><img src="../../img/github.svg" class="social"></a>
 </div>
 
 <body style="margin-top:5%;">
@@ -55,24 +55,92 @@
   </div>
 </div>
 
+<script>
+window.addEventListener('DOMContentLoaded', () => {
+  doSetupPluginToggle();
+});
+</script>
+
 <div style="text-align: left; margin:auto; display:inline; width:35%;">
   <h2 style="margin-top: 5%; margin-left: 3%;"><a href="../" class="backbutton">&lt; Plugins</a></h2>
 </div>
 
-<!--GOICord-->
-    <div class="individualplugincontainer" style="margin:5%;" data-source="https://raw.githubusercontent.com/luckycdev/Zenith-Plugins/main/GOICord/GOICord.cs">
-      <p class='small'><span class="version">v...</span></p>
-      <img src="../../img/plugins/GOICord.png" class="pluginimage">
-      <p style="font-size: xx-large;">GOICord</p>
-      <p>By <a href="https://github.com/luckycdev" target="_blank" class="links">luckycdev</a></p>
-      <p style="margin-left:10px; margin-right:10px;">A bridge between Discord and in-game chat</p>
-      <p style="margin-left:10px; margin-right:10px;">Check out the GOICord Demo on the <a class="links" href="https://discord.gg/r4dD6RjCvq" target="_blank">Zenith Discord Server!</a></p>
-      <br>
-      <br>
-      <a href="https://github.com/luckycdev/Zenith-Plugins/raw/refs/heads/main/GOICord/GOICord.dll">
+    <div class="individualplugincontainer" data-source="https://raw.githubusercontent.com/luckycdev/Zenith-Plugins/main/GOICord/GOICord.cs">
+      <a href="GOICord/"><img src="../../img/plugins/GOICord.png" class="pluginimage"></a>
+      <div class="plugincontainerinfo">
+        <div>
+          <div class="pluginheader">
+            <a class="pluginlinks" href="GOICord/"><p>GOICord</p></a>
+            <p class="plugintext">by</p>
+            <a href="https://github.com/luckycdev" class="plugintext" target="_blank">luckycdev</a>
+          </div>
+          <p>A bridge between Discord and in-game chat</p>
+          <p>Check out the GOICord Demo on the <a class="links" href="https://discord.gg/r4dD6RjCvq" target="_blank">Zenith Discord Server</a>!</p>
+        </div>
+      </div>
+      <a href="https://github.com/luckycdev/Zenith-Plugins/raw/refs/heads/main/GOICord/GOICord.dll" class="plugindownloadlink">
         <button class="plugindownloadbutton">Download</button>
       </a>
+      <p class='small version'>v...</p>
     </div>
-<!--GOICord-->
+
+<div class="pluginpagebuttonscontainer">
+  <button class="pluginpagebuttonstogglebutton" id="descriptionbutton">Description</button>
+  <button class="pluginpagebuttonstogglebutton" id="changelogbutton">Changelog</button>
+</div>
+
+<div class="pluginpagecontainer"></div>
+
+<div id="descriptioncontent" style="display:none;">
+  <p>GOICord is a plugin that is a bridge between Discord and in-game chat</p>
+  <p>Check out a demo of GOICord on the <a class="links" href="https://discord.gg/r4dD6RjCvq" target="_blank">Zenith Discord Server</a>!</p>
+  <p>Type !info in the GOICord channel in Discord to see server info, including the names of online players! (The message won't be sent to game chat)</p>
+
+</div>
+
+<div id="changelogcontent" style="display:none;">
+  <ul>
+    <li>v0.8.1</li>
+    <ul>
+      <li>Changed all logger code to use IPlugin <code>Name</code></li>
+    </ul>
+    <li>v0.8</li>
+    <ul>
+      <li>Made it use modified join and leave messages (for compatability with ChatManager)</li>
+    </ul>
+    <li>v0.7</li>
+    <ul>
+      <li>Made it use new modified chat messages (for compatability with ChatManager)</li>
+    </ul>
+    <li>v0.6</li>
+    <ul>
+      <li>Added update checker</li>
+    </ul>
+    <li>v0.5</li>
+    <ul>
+      <li>Made it so players cant ping people or everyone through the bot, added checker for null channel ID</li>
+    </ul>
+    <li>v0.4</li>
+    <ul>
+      <li>Prevented connection looping if bad config so that other plugins can start loading, changed some wording in console messages, fixed but status not actually updating, made it so if theres only 1 player on it says in status "player" instead of "players", added bot status fail checker</li>
+    </ul>
+    <li>v0.3.1</li>
+    <ul>
+      <li>Fixed !info command</li>
+    </ul>
+    <li>v0.3</li>
+    <ul>
+      <li>Added bot status, emoji parser, update start and stop messages and !info command</li>
+    </ul>
+    <li>v0.2</li>
+    <ul>
+      <li>Added join and leave messages and server start and stop messages support, added !info command, added Zenith v0.5 support (IPlugin class update)</li>
+    </ul>
+    <li>v0.1</li>
+    <ul>
+      <li>Initial release</li>
+      </ul>
+  </ul>
+</div>
 
     </body>

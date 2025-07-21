@@ -3,6 +3,9 @@ body {
     background-color: #1e2124;
     color: white;
 }
+code {
+    background-color: #1d1f22;
+}
 
 .links {
     transition: 0.4s;
@@ -168,21 +171,86 @@ img.social{
     gap: 20px;
 }
 
+.individualplugincontainer {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    border-radius: 15px;
+    width: 75%;
+    margin: 20px auto;
+    padding: 15px;
+    gap: 20px;
+}
+
 .plugincontainer p {
     text-align: left;
     margin: 0.05em 0;
 }
 
+.individualplugincontainer p {
+    text-align: left;
+    margin: 0.05em 0;
+}
+
+.pluginpagecontainer {
+    background-color: #2b2b2b;
+    border-radius: 15px;
+    width: 75%;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.pluginpagebuttonscontainer {
+  background-color: #2b2b2b;
+  border-radius: 30px;
+  width: 20%;
+  height: 40px;
+  margin-left: 11.5%;
+  padding: 5px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 10px;
+}
+
+.pluginpagebuttonstogglebutton {
+  flex: 1;
+  background-color: transparent;
+  border: none;
+  border-radius: 20px;
+  color: #ccc;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 10px 0;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.pluginpagebuttonstogglebutton:hover {
+  background-color: #4c29c9;
+  color: white;
+}
+
+.pluginpagebuttonstogglebutton.active {
+  background-color: #4c29c9;
+  color: white;
+  font-weight: bold;
+}
+
 .plugintext {
+    display: inline;
     color: #cccccc;
 }
 
-.plugintext a {
+p.plugintext {
+    cursor: default;
+}
+
+a.plugintext {
     transition: 0.4s;
     color: #cccccc;
 }
 
-.plugintext a:hover {
+a.plugintext:hover {
     transition: 0.4s;
     color: #a5a5a5;
 }
@@ -197,12 +265,19 @@ img.social{
 
 .pluginheader {
     display: flex;
+    flex-direction: row;
     align-items: center;
     gap: 10px;
     flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+.defaultcursor {
+    cursor: default;
 }
 
 .pluginlinks {
+    display: inline;
     transition: 0.4s;
     color: #ffffff;
     font-size: x-large;
@@ -214,80 +289,54 @@ img.social{
     color: #bebebe;
 }
 
-.individualplugincontainer {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: rgb(26, 27, 29);
-    border-radius: 15px;
-    outline: solid;
-    outline-color: rgb(0, 0, 0);
-    width: 90%;
-    height: 425px;
-    gap: 10px;
-}
-
-.individualplugincontainer p {
-    text-align: center;
-    margin: 0.05em 0;
-    font-size: xx-large;
+.plugindownloadlink {
+  display: inline-block;
+  padding: 0;
+  margin: 0 auto;
+  text-decoration: none;
 }
 
 .plugindownloadbutton {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #4c29c9;
-    border: none;
-    border-radius: 15px;
-    font-size: 17px;
-    color: #FFFFFF;
-    padding: 10px;
-    width: 100px;
-    text-align: center;
-    transition-duration: 0.4s;
-    text-decoration: none;
-    overflow: hidden;
-    cursor: pointer;
+  position: relative;
+  display: block;
+  margin: 20px auto;
+  background-color: #4c29c9;
+  border: none;
+  border-radius: 15px;
+  font-size: 17px;
+  color: #FFFFFF;
+  padding: 10px;
+  width: 100px;
+  text-align: center;
+  transition-duration: 0.4s;
+  text-decoration: none;
+  cursor: pointer;
+  overflow: hidden;
 }
 
 .plugindownloadbutton:after {
-    content: "";
-    background: #5230cf;
-    display: block;
-    position: absolute;
-    padding-top: 300%;
-    padding-left: 350%;
-    margin-left: -20px;
-    margin-top: -120%;
-    opacity: 0;
-    transition: all 0.8s;
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  background: #5230cf;
+  opacity: 0;
+  border-radius: 15px;
+  transform: translate(-50%, -50%) scale(1);
+  transition: all 0.8s;
+  pointer-events: none;
+  z-index: -1;
 }
 
 .plugindownloadbutton:active:after {
-    padding: 0;
-    margin: 0;
-    opacity: 1;
-    transition: 0s;
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1.1);
+  transition: 0s;
 }
 
 .pluginimage {
-    width: 100px;
-    height: 100px;
-    border-radius: 8px;
-    object-fit: cover;
-}
-
-.pluginheader {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-bottom: 10px;
-}
-
-.individualpluginimage {
     width: 100px;
     height: 100px;
     border-radius: 8px;

@@ -26,13 +26,13 @@
 <link href="../../index.css" media="screen" rel="stylesheet" type="text/css"/>
 
 <title>FinishAnnouncements | Zenith Plugins</title>
-<link rel="icon" type="image/png" href="../../img/plugins/FinishAnnouncements.png"/>
+<link rel="icon" type="image/png" href="../../img/zenith-round.png"/>
 
 </head>
 
 <div class="social-icons">
 <a href="https://discord.gg/GVKxbXtbqH" target="_blank"><img src="../../img/discord.svg" class="social"></a>
-<a href="https://github.com/luckycdev/Zenith" target="_blank"><img src="../../img/github.svg" class="social"></a>
+<a href="https://github.com/luckycdev/Zenith-Plugins" target="_blank"><img src="../../img/github.svg" class="social"></a>
 </div>
 
 <body style="margin-top:5%;">
@@ -55,24 +55,62 @@
   </div>
 </div>
 
+<script>
+window.addEventListener('DOMContentLoaded', () => {
+  doSetupPluginToggle();
+});
+</script>
+
 <div style="text-align: left; margin:auto; display:inline; width:35%;">
   <h2 style="margin-top: 5%; margin-left: 3%;"><a href="../" class="backbutton">&lt; Plugins</a></h2>
 </div>
 
-<!--FinishAnnouncements-->
-    <div class="individualplugincontainer" style="margin:5%;" data-source="https://raw.githubusercontent.com/luckycdev/Zenith-Plugins/main/FinishAnnouncements/FinishAnnouncements.cs">
-      <p class='small'><span class="version">v...</span></p>
-      <img src="../../img/plugins/FinishAnnouncements.png" class="pluginimage">
-      <p style="font-size: xx-large;">FinishAnnouncements</p>
-      <p>By <a href="https://github.com/luckycdev" target="_blank" class="links">luckycdev</a></p>
-      <p style="margin-left:10px; margin-right:10px;">Sends a customizable message in chat when players beat the game and what their time was (time will be slightly wrong if the player is using FastStart)</p>
-      <br>
-      <br>
-      <a href="https://github.com/luckycdev/Zenith-Plugins/raw/refs/heads/main/FinishAnnouncements/FinishAnnouncements.dll">
+    <div class="individualplugincontainer" data-source="https://raw.githubusercontent.com/luckycdev/Zenith-Plugins/main/FinishAnnouncements/FinishAnnouncements.cs">
+      <a href="FinishAnnouncements/"><img src="../../img/plugins/FinishAnnouncements.png" class="pluginimage"></a>
+      <div class="plugincontainerinfo">
+        <div>
+          <div class="pluginheader">
+            <a class="pluginlinks" href="FinishAnnouncements/"><p>FinishAnnouncements</p></a>
+            <p class="plugintext">by</p>
+            <a href="https://github.com/luckycdev" class="plugintext" target="_blank">luckycdev</a>
+          </div>
+          <p>Sends a customizable message in chat when players beat the game and what their time was (time will be slightly wrong if the player is using FastStart)</p>
+        </div>
+      </div>
+      <a href="https://github.com/luckycdev/Zenith-Plugins/raw/refs/heads/main/FinishAnnouncements/FinishAnnouncements.dll" class="plugindownloadlink">
         <button class="plugindownloadbutton">Download</button>
       </a>
+      <p class='small version'>v...</p>
     </div>
-<!--FinishAnnouncements-->
 
-  </div>
+<div class="pluginpagebuttonscontainer">
+  <button class="pluginpagebuttonstogglebutton" id="descriptionbutton">Description</button>
+  <button class="pluginpagebuttonstogglebutton" id="changelogbutton">Changelog</button>
+</div>
+
+<div class="pluginpagecontainer"></div>
+
+<div id="descriptioncontent" style="display:none;">
+  <p>FinishAnnouncements is a plugin that sends a customizable message in chat when players beat the game that says what their completion time was</p>
+  <p>The time will be slightly wrong if the player is using FastStart</p>
+
+</div>
+
+<div id="changelogcontent" style="display:none;">
+  <ul>
+    <li>v1.1.1</li>
+    <ul>
+      <li>Changed all logger code to use IPlugin <code>Name</code></li>
+    </ul>
+    <li>v1.1</li>
+    <ul>
+      <li>Added config to make it customizable</li>
+    </ul>
+    <li>v1.0</li>
+    <ul>
+      <li>Initial release</li>
+      </ul>
+  </ul>
+</div>
+
     </body>
