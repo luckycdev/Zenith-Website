@@ -59,7 +59,7 @@ async function fillPluginVersions() {
 
   for (const container of containers) {
     const url = container.dataset.source;
-    const versionElement = container.querySelector('.version');
+    const versionElement = container.querySelector('.small');
 
     try {
       const res = await fetch(url);
@@ -76,18 +76,12 @@ async function fillPluginVersions() {
 
 window.addEventListener('DOMContentLoaded', fillPluginVersions);
 
-function setupPluginToggle({
-  descriptionButtonId,
-  changelogButtonId,
-  contentSelector,
-  descriptionContentId,
-  changelogContentId
-}) {
-  const descBtn = document.getElementById(descriptionButtonId);
-  const changelogBtn = document.getElementById(changelogButtonId);
-  const contentDiv = document.querySelector(contentSelector);
-  const descContent = document.getElementById(descriptionContentId);
-  const changelogContent = document.getElementById(changelogContentId);
+function setupPluginToggle() {
+  const descBtn = document.getElementById('descriptionbutton');
+  const changelogBtn = document.getElementById('changelogbutton');
+  const contentDiv = document.querySelector('.pluginpagecontainer');
+  const descContent = document.getElementById('descriptioncontent');
+  const changelogContent = document.getElementById('changelogcontent');
 
   if (!descBtn || !changelogBtn || !contentDiv || !descContent || !changelogContent) {
     console.warn('Plugin toggle elements missing');
@@ -110,14 +104,4 @@ function setupPluginToggle({
   changelogBtn.addEventListener('click', showChangelog);
 
   showDescription();
-}
-
-function doSetupPluginToggle() {
-    setupPluginToggle({
-    descriptionButtonId: 'descriptionbutton',
-    changelogButtonId: 'changelogbutton',
-    contentSelector: '.pluginpagecontainer',
-    descriptionContentId: 'descriptioncontent',
-    changelogContentId: 'changelogcontent'
-  });
 }
