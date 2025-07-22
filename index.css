@@ -10,6 +10,7 @@ code {
 .links {
     transition: 0.4s;
     color: #6dabee;
+    cursor: pointer;
 }
 
 .links:hover {
