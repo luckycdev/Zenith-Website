@@ -105,3 +105,8 @@ function setupPluginToggle() {
 
   showDescription();
 }
+
+function downloadchangelogtoggleinfo() {
+    var changelogtext = document.getElementsByClassName("changelogtext")[0];
+    changelogtext.hidden = !changelogtext.hidden;
+}
