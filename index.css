@@ -413,7 +413,7 @@ a.plugintext:hover {
     z-index: 10000;
 }
 
-.small{
+.small {
     position: absolute;
     cursor: default;
     position: flex;
@@ -422,4 +422,8 @@ a.plugintext:hover {
     top: 10px;
     text-align: right;
     margin: 0;
+}
+
+.changelogcontainer {
+    text-align: center;
 }
