@@ -424,6 +424,15 @@ a.plugintext:hover {
     margin: 0;
 }
 
-.changelogcontainer {
+.downloadchangelog {
+    width: 50%;
+    margin: auto;
+    text-align: left;
+}
+
+.downloadchangelog summary {
     text-align: center;
+    font-size: xx-large;
+    cursor: pointer;
+    text-decoration: underline;
 }
