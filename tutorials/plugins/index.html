@@ -74,9 +74,8 @@
     <li>Click Build at the top and click Build Solution</li>
     <li>Simply add your plugin's .dll file from your plugin's bin/Debug/net5.0/ into the servers plugins/ folder!</li>
   </ol>
-    <p>*While developing some plugins, you may need to add more dependencies. For the Broadcast plugin, I had to add Lidgren.Network.dll and UnityEngine.CoreModule.dll along with ServerShared.dll</p>
-    <p>*While developing some plugins, you may need NuGet packages. I believe you can make the users install the extra dlls along with the plugin, or you can use Fody and Costura.Fudy to make all your dependencies go into one plugin dll</p>
+    <p>*While developing some plugins, you may need to add more dependencies. For example, for the Broadcast plugin, I had to add Lidgren.Network.dll and UnityEngine.CoreModule.dll along with ServerShared.dll - I got all of these from <a class="links" href="../build">building Zenith</a></p>
+    <p>*While developing some plugins, you may need NuGet packages. I believe you can make the users install the extra dlls along with the plugin, or you can use Fody and Costura.Fody to make all your dependencies go into one plugin dll - for an example, check the <a class="links" href="https://github.com/luckycdev/Zenith-Plugins/tree/main/GOICord">GOICord source</a> (GOICord.csproj & FodyWeavers.xml)</p>
 </div>
-
     
 </body>

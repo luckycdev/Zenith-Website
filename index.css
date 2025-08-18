@@ -436,3 +436,14 @@ a.plugintext:hover {
     cursor: pointer;
     text-decoration: underline;
 }
+
+.socialsdivider {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: rgb(156, 156, 156);
+    display: inline-block;
+    margin-bottom: 1.5px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
