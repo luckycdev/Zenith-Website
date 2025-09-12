@@ -258,6 +258,10 @@ a.plugintext:hover {
     color: #a5a5a5;
 }
 
+.pluginshortdescription {
+    cursor: default;
+}
+
 .plugincontainerinfo {
     display: flex;
     flex-direction: row;
