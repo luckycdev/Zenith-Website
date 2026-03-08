@@ -1,6 +1,6 @@
 function getServerList(){
   document.getElementById("servers").textContent = "Loading...";
-  fetch("https://corsproxy.io/?https://master.gettingoverit.mp/list")
+  fetch("https://cors.luckyc.dev/https://master.gettingoverit.mp/list")
     .then(res => res.text())
     .then(data => {
       const lines = data.trim().split("\n");
