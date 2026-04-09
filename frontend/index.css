@@ -451,3 +451,21 @@ a.plugintext:hover {
     margin-left: 5px;
     margin-right: 5px;
 }
+
+#servers {
+    margin-bottom: 20px;
+}
+
+#servers ul {
+    list-style-type: none;
+    padding-left: 0 !important;
+}
+
+#servers li {
+    padding: 4px 0;
+    border-bottom: 1px solid rgba(100, 100, 100, 0.2);
+}
+
+#servers li:last-child {
+    border-bottom: none;
+}

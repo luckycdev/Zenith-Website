@@ -1,27 +1,62 @@
 function getServerList(){
   document.getElementById("servers").textContent = "Loading...";
-  fetch("https://cors.luckyc.dev/https://master.gettingoverit.mp/list")
-    .then(res => res.text())
-    .then(data => {
-      const lines = data.trim().split("\n");
-      const formatted = lines.map(line => {
-        const [ip, port] = line.trim().split(";");
-        const server = `${ip}:${port}`;
-        const isZenith = server === "193.122.138.111:12345";
-        const label = isZenith ? " (Official Zenith Demo)" : "";
 
-        return `
-          <p class="clickable-copy" onclick="copyText(this)" data-copy="${server}">
-            <strong><u>${server}</u>${label}</strong>
-            <i class="fa-regular fa-clipboard" style="margin-left: 8px;"></i>
-          </p>
-        `;
+  fetch('/api/servers')
+    .then(res => {
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      return res.json();
+    })
+    .then(data => {
+      if (data.status !== 'success' || !data.data) {
+        throw new Error('Invalid response format');
+      }
+
+      const servers = data.data;
+      const container = document.getElementById('servers');
+      container.innerHTML = '';
+
+      if (servers.length === 0) {
+        container.innerHTML = '<p style="color: #999;">No online servers found.</p>';
+        return;
+      }
+
+      const template = document.getElementById('server-template');
+
+      servers.forEach(server => {
+        const clone = template.content.cloneNode(true);
+        
+        // Set server info
+        clone.querySelector('.server-name').textContent = server.name;
+        clone.querySelector('.server-address').textContent = server.address;
+        clone.querySelector('.server-players').textContent = server.players;
+        clone.querySelector('.server-max-players').textContent = server.maxPlayers;
+        
+        if (server.isOfficial) {
+          clone.querySelector('.official-badge').style.display = 'inline';
+        }
+        
+        clone.querySelector('.clickable-copy').dataset.copy = server.address;
+        
+        const playerList = clone.querySelector('.player-list');
+        if (server.playerNames.length > 0) {
+          server.playerNames.forEach(name => {
+            const li = document.createElement('li');
+            li.textContent = name;
+            playerList.appendChild(li);
+          });
+        } else {
+          const li = document.createElement('li');
+          li.textContent = 'None';
+          li.style.color = '#999';
+          playerList.appendChild(li);
+        }
+        
+        container.appendChild(clone);
       });
-      document.getElementById("servers").innerHTML = formatted.join("");
     })
     .catch(err => {
       console.error("Error fetching server list:", err);
-      document.getElementById("servers").textContent = "Error loading servers";
+      document.getElementById("servers").innerHTML = '<p style="color: #ff6b6b;">Error loading servers. Please try again later.</p>';
     });
 }
 
