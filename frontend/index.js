@@ -32,7 +32,7 @@ function getServerList(){
         clone.querySelector('.server-max-players').textContent = server.maxPlayers;
         
         if (server.isOfficial) {
-          clone.querySelector('.official-badge').style.display = 'inline';
+          clone.querySelector('.official-badge').style.display = 'block';
         }
         
         clone.querySelector('.clickable-copy').dataset.copy = server.address;

@@ -456,16 +456,68 @@ a.plugintext:hover {
     margin-bottom: 20px;
 }
 
-#servers ul {
-    list-style-type: none;
-    padding-left: 0 !important;
+.server-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 14px;
 }
 
-#servers li {
-    padding: 4px 0;
-    border-bottom: 1px solid rgba(100, 100, 100, 0.2);
+.server-header {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 0;
 }
 
-#servers li:last-child {
+.official-badge {
+    background-color: #4c29c9;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 999px;
+    padding: 8px 16px;
+    margin-bottom: 10px;
+}
+
+.server-name-line {
+    font-size: 22px;
+    color: #ffffff;
+}
+
+.server-info-line {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+
+.server-info-line .plugintext {
+    margin: 0;
+}
+
+.server-info-line code {
+    background-color: #1d1f22;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.server-card .clickable-copy {
+    margin: 0;
+    justify-content: center;
+}
+
+.player-list {
+    margin: 8px 0 0;
+    color: #cccccc;
+    list-style-type: disc;
+    list-style-position: outside;
+    text-align: left;
+    display: inline-block;
+    padding-left: 20px;
+}
+
+.player-list li {
+    padding: 2px 0;
     border-bottom: none;
 }

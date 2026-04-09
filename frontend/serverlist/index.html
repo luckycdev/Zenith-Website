@@ -65,31 +65,28 @@
 </div>
 
 <template id="server-template">
-  <div class="plugincontainer" style="background-color: rgb(26, 27, 29); flex-direction: column; align-items: stretch;">
-    <div class="pluginheader">
-      <strong style="font-size: 18px; color: #ffffff;"><span class="server-name"></span></strong>
-      <span class="official-badge" style="display: none; color: #4c29c9; margin-left: 8px; font-size: 12px;">✅ Official Zenith Demo</span>
+  <div class="plugincontainer server-card">
+    <div class="pluginheader server-header">
+      <span class="official-badge" style="display: none;">✅ Official Zenith Demo</span>
+      <strong class="server-name-line"><span class="server-name"></span></strong>
     </div>
-    
-    <div style="display: flex; gap: 20px; flex-wrap: wrap;">
-      <div>
-        <p class="plugintext"><strong>Server Address:</strong></p>
-        <p class="clickable-copy" onclick="copyText(this)" style="margin: 5px 0;">
-          <code style="background-color: #1d1f22; padding: 4px 8px; border-radius: 4px;" class="server-address"></code>
-          <i class="fa-regular fa-clipboard"></i>
-        </p>
-      </div>
-      
-      <div>
-        <p class="plugintext"><strong>Players:</strong></p>
-        <p class="plugintext" style="margin: 5px 0;"><code style="background-color: #1d1f22; padding: 4px 8px; border-radius: 4px;"><span class="server-players"></span>/<span class="server-max-players"></span></code></p>
-      </div>
+
+    <div class="server-info-line">
+      <p class="plugintext"><strong>Server Address:</strong></p>
+      <p class="clickable-copy" onclick="copyText(this)">
+        <code class="server-address"></code>
+        <i class="fa-regular fa-clipboard"></i>
+      </p>
     </div>
-    
-    <div style="margin-top: 10px;">
+
+    <div class="server-info-line">
+      <p class="plugintext"><strong>Players:</strong></p>
+      <p class="plugintext"><code><span class="server-players"></span>/<span class="server-max-players"></span></code></p>
+    </div>
+
+    <div class="server-info-line">
       <p class="plugintext"><strong>Online Players:</strong></p>
-      <ul style="margin: 8px 0; padding-left: 20px; color: #cccccc;" class="player-list">
-      </ul>
+      <ul class="player-list"></ul>
     </div>
   </div>
 </template>
