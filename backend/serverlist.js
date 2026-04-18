@@ -3,17 +3,31 @@ const dgram = require('node:dgram');
 const MASTER_URL = 'https://master.gettingoverit.mp/list';
 const OFFICIAL_ZENITH = '193.122.138.111:12345';
 const DISCOVERY_REQUEST = Buffer.from([136, 0, 0, 0, 0]);
+const MAX_VARUINT_BYTES = 5;
+const MAX_REASONABLE_PLAYER_NAMES = 1000;
+
+function ensureReadable(buf, offset, length) {
+  if (offset < 0 || length < 0 || offset + length > buf.length) {
+    throw new Error('Malformed server response');
+  }
+}
 
 function readVarUInt(buf, offset) {
   let value = 0;
   let shift = 0;
   let pos = offset;
+  let bytesRead = 0;
 
   while (true) {
+    if (bytesRead >= MAX_VARUINT_BYTES) {
+      throw new Error('Malformed varuint in server response');
+    }
+    ensureReadable(buf, pos, 1);
     const byte = buf[pos++];
     value |= (byte & 0x7f) << shift;
     if ((byte & 0x80) === 0) break;
     shift += 7;
+    bytesRead += 1;
   }
 
   return { value, next: pos };
@@ -21,8 +35,12 @@ function readVarUInt(buf, offset) {
 
 function readString(buf, offset) {
   const lenInfo = readVarUInt(buf, offset);
+  if (lenInfo.value < 0) {
+    throw new Error('Negative string length in server response');
+  }
   const start = lenInfo.next;
   const end = start + lenInfo.value;
+  ensureReadable(buf, start, lenInfo.value);
   return {
     value: buf.toString('utf8', start, end),
     next: end,
@@ -30,10 +48,12 @@ function readString(buf, offset) {
 }
 
 function readU16(buf, offset) {
+  ensureReadable(buf, offset, 2);
   return { value: buf.readUInt16LE(offset), next: offset + 2 };
 }
 
 function readI32(buf, offset) {
+  ensureReadable(buf, offset, 4);
   return { value: buf.readInt32LE(offset), next: offset + 4 };
 }
 
@@ -74,6 +94,11 @@ function queryServer(ip, port, timeoutMs) {
       socket.close();
 
       try {
+        if (!Buffer.isBuffer(msg) || msg.length < 5) {
+          resolve(null);
+          return;
+        }
+
         let offset = 5;
 
         let read = readString(msg, offset);
@@ -99,8 +124,16 @@ function queryServer(ip, port, timeoutMs) {
         const nameCount = read.value;
         offset = read.next;
 
+        if (nameCount < 0) {
+          resolve(null);
+          return;
+        }
+
+        const maxExpectedNames = Math.max(players, maxPlayers, 0);
+        const safeNameCount = Math.min(nameCount, maxExpectedNames, MAX_REASONABLE_PLAYER_NAMES);
+
         const playerNames = [];
-        for (let i = 0; i < nameCount; i++) {
+        for (let i = 0; i < safeNameCount; i++) {
           read = readString(msg, offset);
           playerNames.push(read.value);
           offset = read.next;
