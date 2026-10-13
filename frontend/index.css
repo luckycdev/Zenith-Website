@@ -428,6 +428,76 @@ a.plugintext:hover {
     margin: 0;
 }
 
+.todo-page {
+    width: min(1100px, calc(100% - 40px));
+    margin: 0 auto;
+    padding: 120px 0 60px;
+}
+
+.todo-intro {
+    text-align: center;
+    margin: 0 auto 30px;
+    max-width: 800px;
+}
+
+.todo-intro h1 {
+    margin: 0 0 10px;
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+}
+
+.todo-intro p {
+    margin: 0;
+    color: #c9c9c9;
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+
+.todo-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.todo-section {
+    background-color: rgb(26, 27, 29);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 18px;
+    padding: 20px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+}
+
+.todo-section h2 {
+    margin: 0 0 14px;
+    font-size: 1.35rem;
+}
+
+.todo-section ul {
+    margin: 0;
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.todo-section li {
+    padding: 10px 12px;
+    border-radius: 12px;
+    background-color: rgba(255, 255, 255, 0.03);
+    line-height: 1.5;
+    color: #e7e7e7;
+}
+
+.todo-section li span {
+    color: #a7a7a7;
+}
+
+@media screen and (max-width: 500px) {
+    .todo-page {
+        width: calc(100% - 24px);
+        padding-top: 110px;
+    }
+}
+
 .downloadchangelog {
     width: 50%;
     margin: auto;

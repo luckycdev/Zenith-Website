@@ -32,12 +32,12 @@
 
 </head>
 
+<body>
 <div class="social-icons">
 <a href="https://discord.gg/GVKxbXtbqH" target="_blank"><img src="../img/discord.svg" class="social"></a>
 <a href="https://github.com/luckycdev/Zenith" target="_blank"><img src="../img/github.svg" class="social"></a>
 </div>
 
-<body>
   <div class="toggleheaderbutton"><button class="downloadbutton" onclick="toggleHeader();">Toggle Header</button></div>
 <div class="header">
   <div class="header-left">
@@ -58,42 +58,89 @@
   </div>
 </div>
 
-<div style="text-align: center; margin:auto; display:inline; width:35%;">
-    <h1 style="margin-top: 10%;"><u>Download Zenith</u><img style="vertical-align: middle; margin-left: 8px;" src="https://img.shields.io/github/downloads/luckycdev/zenith/total?color=%239F7AEA&logo=github"></h1>
-    <h2>Select your architecture to download the server</h2>
-    <h3 id="latest-tag">Current Version: Loading</h3>
-    <div class="download-buttons">
-        <a href="https://github.com/luckycdev/Zenith/releases/latest/download/zenith-win-x64.zip"><button class="downloadbutton">Windows x64</button></a>
-        <a href="https://github.com/luckycdev/Zenith/releases/latest/download/zenith-linux-arm64.zip"><button class="downloadbutton">Linux ARM64</button></a>
-        <a href="https://github.com/luckycdev/Zenith/releases/latest/download/zenith-linux-x64.zip"><button class="downloadbutton">Linux x64 (untested)</button></a>
-        <a href="https://github.com/luckycdev/Zenith/releases/latest/download/zenith-osx-x64.zip"><button class="downloadbutton">MacOS x64 (untested)</button></a>
-        <a href="https://github.com/luckycdev/Zenith/releases/latest/download/zenith-build.zip"><button class="downloadbutton">Raw build</button></a>
+  <div class="todo-page">
+    <div class="todo-intro">
+      <h1>Zenith TODOs</h1>
+    </div>
+
+    <div class="todo-grid">
+      <section class="todo-section">
+        <h2>Zenith TODOs</h2>
+        <ul>
+          <li><strong>/plugins reload</strong>: commands created by plugins do not fully reload; may need to unregister them on reload.</li>
+          <li><strong>Plugin API expansion</strong>: expose more engine/game events like message broadcast, bans, unbans, and anything else useful for plugins.</li>
+          <li><strong>Plugin API docs</strong>: add full documentation and examples on a website.</li>
+          <li><strong>Steam auth</strong>: investigate steam authentication.</li>
+          <li><strong>Pot visuals</strong>: check RGB and goldness behavior.</li>
+          <li><strong>Custom pot skins</strong>: investigate why they do not work in multiplayer.</li>
+          <li><strong>Windows console</strong>: reduce flicker from resetting the typing line and stop random blank lines.</li>
+          <li><strong>More architectures</strong>: build for additional targets and test them.</li>
+          <li><strong>Server name changes</strong>: see whether changing the server name while it is running is possible.</li>
+          <li><strong>Chat colors</strong>: support multiple colors in one message line.</li>
+          <li><strong>Console chat colors</strong>: confirm chat colors carry through to console messages.</li>
+          <li><strong>Player list name/rank</strong>: test whether player names can include rank text and whether the player list can be ordered.</li>
+        </ul>
+      </section>
+
+      <section class="todo-section">
+        <h2>Plugin TODOs</h2>
+        <ul>
+          <li><strong>Plugin integration</strong>: make plugins able to talk to each other more easily, like GOICord + FinishAnnouncements, nickname support, and mutes with PrivateMessage.</li>
+          <li><strong>ChatManager bad word/name checks</strong>: verify the filter works and improve strict mode so it does not false-match normal words like classroom.</li>
+          <li><strong>Plugin config updates</strong>: check every config value on load so newer settings get added without deleting the file.</li>
+          <li><strong>Config cleanup</strong>: simplify plugin config loading and remove the messy if/else style.</li>
+          <li><strong>ChatManager join/leave</strong>: let join and leave messages optionally show the player rank prefix.</li>
+          <li><strong>Player toggles</strong>: let players hide join/leave messages for themselves.</li>
+          <li><strong>WelcomeMessage</strong>: make /togglewelcomemessage check both name and IP.</li>
+          <li><strong>Placeholders</strong>: add shared placeholders other plugins can use, like %chatmanager_prefix%.</li>
+          <li><strong>GOICord bot restart</strong>: add a command to restart the bot without restarting the whole plugin.</li>
+          <li><strong>GOICord bot messages</strong>: add a toggle for relaying bot messages, with self-message filtering to avoid loops.</li>
+          <li><strong>GOICord customization</strong>: expand bot customization for nicknames, colors, prefixes, and related settings.</li>
+          <li><strong>GOICord console channel</strong>: add a Discord console channel, with optional command access for trusted roles.</li>
+          <li><strong>GOICord status channel</strong>: keep an embed updated with the current player list.</li>
+          <li><strong>GOICord edited messages</strong>: forward edited Discord messages back into GOI chat when enabled.</li>
+          <li><strong>GOICord /discord</strong>: add an in-game command that returns the Discord invite link.</li>
+          <li><strong>GOICord roles</strong>: optionally show selected Discord roles and maybe Discord global names if the API allows it.</li>
+          <li><strong>GOICord replies</strong>: show when a Discord message is replying to another message.</li>
+          <li><strong>GOICord server info</strong>: try to detect the public IP and use it in !info.</li>
+          <li><strong>GOICord commands</strong>: add more Discord commands.</li>
+          <li><strong>GOICord channels</strong>: make join/leave channels optional and support delayed join messages for returning players.</li>
+          <li><strong>FinishAnnouncements</strong>: verify the height check.</li>
+          <li><strong>FinishAnnouncements stats</strong>: save times to file and show fastest times for day, week, month, and all time.</li>
+          <li><strong>Default banned words</strong>: ship a default banned-word list that can be overridden in config.</li>
+        </ul>
+      </section>
+
+      <section class="todo-section">
+        <h2>Other TODOs</h2>
+        <ul>
+          <li><strong>Native app</strong>: replace the Zenith Electron GUI with a native app.</li>
+          <li><strong>Pterodactyl egg</strong>: set up an egg for Zenith servers.</li>
+          <li><strong>Website theme toggle</strong>: add light and dark mode switching to the Zenith website.</li>
+          <li><strong>Update checkers</strong>: make sure every plugin and Zenith itself uses the newer update checker, and keep it blue.</li>
+          <li><strong>Config checkers</strong>: make sure every plugin uses the newer config checker.</li>
+          <li><strong>Chat edge cases</strong>: test what happens when server-side chat receives empty strings or spaces, and decide whether a per-feature toggle is better.</li>
+        </ul>
+      </section>
+
+      <section class="todo-section">
+        <h2>Future Plugins Ideas</h2>
+        <ul>
+          <li><strong>Permissions manager</strong>: a plugin for managing roles, access, and plugin permissions.</li>
+          <li><strong>Stats plugin</strong>: server and player analytics, including active times, playtime, completions, and recaps.</li>
+          <li><strong>Teleport plugin</strong>: add teleport support.</li>
+          <li><strong>Visibility controls</strong>: hide specific players with whitelist or blacklist support, plus optional mute controls.</li>
+          <li><strong>Missed messages</strong>: show messages sent right before or after a player reconnects.</li>
+          <li><strong>Private messages</strong>: add a /msg command for direct player-to-player chat.</li>
+          <li><strong>Chained Together</strong>: a plugin idea for that game, possibly built on teleport support.</li>
+          <li><strong>Custom commands</strong>: add simple server commands like /discord and /tutorial.</li>
+          <li><strong>Vote kick / tempban</strong>: add community moderation options when staff are not around.</li>
+        </ul>
+      </section>
     </div>
 </div>
 
-<script>getLatestReleaseTag();</script>
-
 <br>
 <br>
-
-<div class="downloadchangelog">
-  <details>
-    <summary>Changelog</summary>
-    <li><a class="links" href="https://github.com/luckycdev/Zenith/releases/tag/v0.7.6" target="_blank">v0.7.6</a> - replace accesslevels with ranks, improve permissions, add /rank command, rename all accesslevel stuff to rank/permissions, improve command logging</li>
-    <li>v0.7.5 (not built) - start on reworking access levels, add permissions.json, change how players.json looks, add name to access levels assignment, add kick command, grant accesslevel immediately, make ban command kick</li>
-    <li><a class="links" href="https://github.com/luckycdev/Zenith/releases/tag/v0.7.4" target="_blank">v0.7.4</a> - improve console manager</li>
-    <li>v0.7.3 (not built) - make join and leave messages modifiable (for plugins)</li>
-    <li>v0.7.2 (not built) - log when commands are run</li>
-    <li><a class="links" href="https://github.com/luckycdev/Zenith/releases/tag/v0.7.1" target="_blank">v0.7.1</a> - fix modifiable chat messages, update <code>status</code> command</li>
-    <li>v0.7 (not built) - make chat messages modifiable (for plugins) (did not work properly)</li>
-    <li>v0.6.1 (not built) - add version stuff to status command</li>
-    <li><a class="links" href="https://github.com/luckycdev/Zenith/releases/tag/v0.6" target="_blank">v0.6</a> - check for new versions, say when a plugin is being loaded, add custom color for logger</li>
-    <li><a class="links" href="https://github.com/luckycdev/Zenith/releases/tag/v0.5" target="_blank">v0.5</a> - added /plugins command, made it so plugins can see join and leave messages, added plugin version and author to IPlugin, added zenithversion as a sharedconstant</li>
-    <li><a class="links" href="https://github.com/luckycdev/Zenith/releases/tag/v0.4" target="_blank">v0.4</a> - made it so plugins can read chat messages</li>
-    <li><a class="links" href="https://github.com/luckycdev/Zenith/releases/tag/v0.3" target="_blank">v0.3</a> - commands support for plugins</li>
-    <li><a class="links" href="https://github.com/luckycdev/Zenith/releases/tag/v0.2" target="_blank">v0.2</a> - add plugin support</li>
-    <li><a class="links" href="https://github.com/luckycdev/Zenith/releases/tag/v0.1" target="_blank">v0.1</a> - add linux support</li>
-  </details>
-</div>
 
 </body>
